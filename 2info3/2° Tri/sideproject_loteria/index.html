@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+
+    <div class="col-md-12">
+
+        <form class="form-horizontal" method="get" action="jogar.php">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>     </legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Nome">Nome</label>
+                    <div class="col-md-4">
+                        <input id="Nome" name="Nome" type="text" placeholder="Digite seu nome" class="form-control input-md">
+                        <span class="help-block"> </span>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Jogoselecionado">Selecione o jogo</label>
+                    <div class="col-md-4">
+                        <select id="Jogoselecionado" name="jogoselecionado" class="form-control">
+                            <option value="1">Mega-sena</option>
+                            <option value="2">Quina</option>
+                            <option value="3">Lotomania</option>
+                            <option value="4">Lotofácil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Jogar"></label>
+                    <div class="col-md-4">
+                        <button id="Jogar" name="Jogar" class="btn btn-success">Jogar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+
+    </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
