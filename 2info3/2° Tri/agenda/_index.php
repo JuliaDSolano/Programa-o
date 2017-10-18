@@ -1,16 +1,12 @@
-<?php
-
-    session_start(); //
-
-    if (!isset($_SESSION['usuario_online'])OR !$_SESSION['usuario_online'] == true){
-        header('Location: login.php');
+    <?php
+    session_start();
+    $existe = isset($_SESSION['usuario_online']);
+    if($existe == false){
+        //redirecionar
+        header("Location: login.php");
     }
 
-    require 'controlador_agenda.php';
-    $meuscontatos = pegarContatos();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
