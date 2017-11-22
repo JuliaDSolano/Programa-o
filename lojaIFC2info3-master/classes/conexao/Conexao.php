@@ -1,31 +1,30 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: aluno
- * Date: 08/11/17
- * Time: 10:33
- */
+require_once __DIR__."/../../config/config.php";
 
-    require_once "../../config/config.php";
+class Conexao{
 
-    class Conexao{
+    private static $conexao = null;
 
-        public function getConexao(){
+    public static function getConexao(){
 
-            try{
-            $conexao = new PDO("mysql:host=".HOST."; dbname=".BANCO, USUARIO, SENHA);
+        try{
+            if (self::$conexao == null){
 
-        }
-        catch (Exception $e) {
-            echo "Ocorreu um erro {$e->getMessage()} na linha {$e->getLine()}";
+                self::$conexao = new PDO("mysql:host=".HOST."; dbname=".BANCO, USUARIO, SENHA);
+
+                //NECESSÁRIO CONFIGURAR UM ATRIBUTO PARA SER INFORMADO DOS ERROS NO SQL
+
+            self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }
+
+            return self::$conexao;
+
+            }catch (PDOException $e) {
+                echo "Ocorreu um erro {$e->getMessage()} na linha {$e->getLine()}";
+
+            }
 
         }
 
     }
-
-}
-
-    //teste
-   // $conexao = new Conexao();
-    //$conexao->getConexao();
